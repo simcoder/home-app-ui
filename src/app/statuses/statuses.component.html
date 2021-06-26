@@ -1,0 +1,33 @@
+<div class="wrapper">
+    <div class="top">
+        <div class="head">
+            <h2>Happy Birthday Daddy!</h2>
+         </div>
+         <div class="grid-row-4">
+           <div class="card">
+             <div class="card-head">
+                 <h4>Guests</h4>
+             </div> 
+             <ng-container *ngFor="let person of dataSource">
+               <div class="items">
+                 <span>{{ person.name }}</span>
+               </div>
+             </ng-container>
+           </div>
+         </div>
+    </div>
+    <div class="top">
+        <div class="grid-row">
+            <div class="tile">
+               <img class="img" src="../../assets/scanme.png" />
+             </div>
+             <app-events [show]="false"></app-events>
+        </div>
+    </div>
+
+     
+     
+</div>
+
+ 
+

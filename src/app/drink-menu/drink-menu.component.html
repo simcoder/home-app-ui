@@ -1,0 +1,45 @@
+<ng-container *ngIf="!loading">
+    <div style="text-align: center"><h2 class="header">Bar Menu</h2></div>
+    <div class="select-style">
+      <mat-form-field appearance="fill">
+          <mat-label>Your Name?</mat-label>
+          <mat-select (selectionChange)="onChangeSelect($event)">
+            <mat-option *ngFor="let name of names" [value]="name.value">
+              {{name.viewValue}}
+            </mat-option>
+          </mat-select>
+          
+        </mat-form-field>
+
+    </div>
+  <ul>
+    <ng-container *ngFor="let drink of drinks">
+      <li class="menu-item">
+        <input (click)="onDrinkClick(drink.id)" type="checkbox" checked />
+        <i></i>
+        <h2 >{{ drink.name }}</h2>
+        <div class="accordion-content">
+          <div class="content">
+            <div class="content-desc">{{ drink.description }}</div>
+            
+            <div class="content-order">
+              <ul class="menu-back">
+                  <li *ngIf="selectedNameId && displayOrderButton"> 
+                      <a (click)="onOrderClick(drink.id)" class="fancyshrink"
+                      >Order</a
+                    >
+                    <app-fancy-button name="Order" route="/check-in" (routeChange)="onRouteClicked($event, drink.id)"></app-fancy-button>
+                  </li>
+              </ul>
+             
+            </div>
+          </div>
+        </div>
+      </li>
+    </ng-container>
+  </ul>
+  <ul class="menu-back">
+      <li> <a class="fancyshrink" routerLink="/">Home</a></li>
+  </ul>
+</ng-container>
+<app-spinner *ngIf="loading"></app-spinner>

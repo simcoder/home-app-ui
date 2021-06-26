@@ -1,0 +1,165 @@
+
+.grid-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  
+  grid-gap: 1rem;
+  .header {
+      height: 12%;
+      text-align: center;
+  }
+  .items {
+
+    text-align: center;
+   // padding: 1rem;
+    color: #F06292;;
+    //border: 1px dotted #dce7eb;
+  }
+  
+  
+}
+
+
+.card{
+    border: none;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    .card-head{
+        text-align: center;
+        margin-top: 10px;
+        color: white;
+    }
+}
+
+
+
+
+
+body{
+	background: #fff;
+  margin: 0;
+}
+
+
+
+.words{
+	display: inline;
+	text-indent: 20px;
+}
+
+$totalWords: 24;
+
+@mixin animation($name, $time, $easing, $iteration-count, $start-delay ) {
+  -webkit-animation: $name $time $easing $iteration-count $start-delay;
+	-ms-animation: $name $time $easing $iteration-count $start-delay;
+	animation: $name $time $easing $iteration-count $start-delay;
+}
+
+@mixin animation-delay($time) {
+  -webkit-animation-delay: $time; 
+	-ms-animation-delay: $time; 
+	animation-delay: $time;   
+}
+
+.words span{
+	position: absolute;
+	opacity: 0;
+	overflow: hidden;
+	color: #3A539B;
+	@include animation(rotateWord, $totalWords * 3 + s, ease-in-out, infinite, 0s);
+}
+
+@for $i from 2 through $totalWords {
+  .words span:nth-child(#{$i}) {
+    @include animation-delay(3 * ($i - 1) + s); 
+  }
+}
+
+@-webkit-keyframes rotateWord {
+    0% { opacity: 0; }
+    1% { opacity: 0; -webkit-transform: translateY(-30px); }
+    2% { opacity: 1; -webkit-transform: translateY(0px); }
+    4% { opacity: 1; -webkit-transform: translateY(0px); }
+    5% { opacity: 0; -webkit-transform: translateY(30px); }
+    80% { opacity: 0; }
+    100% { opacity: 0; }
+}
+@keyframes rotateWord {
+    0% { opacity: 0; }
+    1% { opacity: 0; -webkit-transform: translateY(-30px); }
+    2% { opacity: 1; -webkit-transform: translateY(0px); }
+    4% { opacity: 1; -webkit-transform: translateY(0px); }
+    5% { opacity: 0; -webkit-transform: translateY(30px); }
+    80% { opacity: 0; }
+    100% { opacity: 0; }
+}
+@-ms-keyframes rotateWord {
+    0% { opacity: 0; }
+    1% { opacity: 0; -webkit-transform: translateY(-30px); }
+    2% { opacity: 1; -webkit-transform: translateY(0px); }
+    4% { opacity: 1; -webkit-transform: translateY(0px); }
+    5% { opacity: 0; -webkit-transform: translateY(30px); }
+    80% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+
+  .items {
+    text-align: center;
+    //padding: 1rem;
+    color: #F06292;;
+    //border: 1px dotted #dce7eb;
+    width: 100%;
+  }
+  .tile {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    //min-height: 600px;
+    .img{
+        max-width: 100px;
+        max-height: 100px;
+    }
+  }
+
+  .title{
+    //text-align: center;
+  }
+
+  ul {
+    list-style-type:none;
+    width: 100%;
+    padding: 1rem;
+}
+.wrapper {
+  height: 100%;
+  display: table;
+  height: 100%;
+  margin: 0;
+  padding: 10px;
+  width: 100%;
+}
+.head {
+    text-align: center;
+    color: white;
+
+}
+.top {
+    display: table-row;
+    height: 50%;
+  }
+
+  .grid-row-4 {
+      display: grid;
+  }
+
+
+
+
+
+
+
+  
+

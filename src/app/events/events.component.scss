@@ -1,0 +1,154 @@
+ul.main {
+  list-style: none;
+  max-width: 75%;
+  margin: 20px auto;
+}
+h3 {
+  padding: 0;
+  margin: 0;
+}
+
+.date {
+  width: 17%;
+  padding: 15% 1% 0 0;
+  float: left;
+}
+
+.date h3 {
+  font-size: 1.5em;
+  color: white;
+}
+
+.date p {
+  font-size: 0.8em;
+  color: #f06292;
+}
+
+.events {
+  float: left;
+  width: 80%;
+  border-left: 1px solid #ccc;
+  margin-top: 10%;
+  padding-top: 3%;
+}
+
+.events-detail {
+  max-width: 550px;
+}
+
+.events-detail li {
+  padding: 10px;
+  border-bottom: 1px dashed #ccc;
+  line-height: 22px;
+  transition: ease 0.4s all;
+}
+
+.events-detail li:hover {
+  // background: #e9e9e9;
+}
+
+.event-time {
+  font-weight: 900;
+  color: white;
+}
+.event-name {
+  color: white;
+}
+
+.events-detail li a {
+  text-decoration: none;
+  color: #444;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.event-location {
+  font-size: 0.8em;
+  color: #f06292;
+  margin-left: 70px;
+}
+
+@media all and (max-width: 641px) {
+  .date {
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+  }
+
+  .events {
+    border: none;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .events-detail {
+    padding: 0;
+  }
+
+  li.date p {
+    margin: 0;
+  }
+}
+
+  
+.fancyshrink{
+    font-family: 'Dosis', sans-serif;
+    font-size: 30px;
+    width: 100%;
+  background: rgba(241,231,103,1);
+  background: -moz-linear-gradient(-45deg, rgba(241,231,103,1) 0%, rgba(252,70,216,1) 100%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(241,231,103,1)), color-stop(100%, rgba(252,70,216,1)));
+  background: -webkit-linear-gradient(-45deg, rgba(241,231,103,1) 0%, rgba(252,70,216,1) 100%);
+  background: -o-linear-gradient(-45deg, rgba(241,231,103,1) 0%, rgba(252,70,216,1) 100%);
+  background: -ms-linear-gradient(-45deg, rgba(241,231,103,1) 0%, rgba(252,70,216,1) 100%);
+  background: linear-gradient(135deg, rgba(241,231,103,1) 0%, rgba(252,70,216,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1e767', endColorstr='#fc46d8', GradientType=1 );
+    display: block;
+    text-align: center;
+    max-width: 400px;
+    height: 50px;
+    line-height: 50px;
+    margin: 25px auto;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px 20px 20px 20px;
+  -moz-border-radius: 20px 20px 20px 20px;
+  -webkit-border-radius: 20px 20px 20px 20px;
+  border: 0px solid #000000;
+     -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+  }
+  
+  .fancyshrink:hover{
+  -webkit-box-shadow: 0px 14px 23px -10px rgba(0,44,68,0.56);
+  -moz-box-shadow: 0px 14px 23px -10px rgba(0,44,68,0.56);
+  box-shadow: 0px 14px 23px -10px rgba(0,44,68,0.56);
+   
+    transform: scale(0.950, 0.950);
+  -webkit-transform: scale(0.950, 0.950);
+  -moz-transform: scale(0.950, 0.950);
+  -o-transform: scale(0.950, 0.950);
+  -ms-transform: scale(0.950, 0.950);
+  }
+
+  .content {
+   display: flex;
+   height: 100%;
+  align-items: center;   
+}
+
+ul.nav {
+    list-style-type:none;
+    width: 100%;
+    padding: 1rem;
+}
+.wrapper {
+    display: grid;
+}
+
+.nav {
+    padding: 1rem;
+}

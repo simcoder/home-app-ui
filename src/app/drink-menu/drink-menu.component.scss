@@ -1,0 +1,365 @@
+.transition, ul li i:before, ul li i:after, .content{
+    transition: all 0.25s ease-in-out;
+  }
+
+
+.menu-back {
+    width: 100%;
+    padding: 1rem;
+    > li {
+        border-top: none;
+        border-bottom: none;
+    }
+    
+}
+  h2{
+      text-align: center;
+  }
+  
+  .flipIn, ul li, h1 {
+    animation: flipdown 0.5s ease both;
+  }
+  
+  .no-select, h2 {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  html {
+    width: 100%;
+    height: 100%;
+    perspective: 900;
+    overflow-y: scroll;
+    font-family: "Titillium Web", sans-serif;
+    color: rgba(48, 69, 92, 0.8);
+  }
+  
+  body {
+    min-height: 0;
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    margin: 90px 0;
+    transform: translate(-50%, 0);
+    box-shadow: 0 10px 0 0 #F06292 inset;
+    max-width: 450px;
+    padding: 30px;
+  }
+  @media (max-width: 550px) {
+    body {
+      box-sizing: border-box;
+      transform: translate(0, 0);
+      max-width: 100%;
+      min-height: 100%;
+      margin: 0;
+      left: 0;
+    }
+  }
+  
+  h1, h2 {
+    color: #F06292;
+  }
+  
+  h1 {
+    text-transform: uppercase;
+    font-size: 36px;
+    line-height: 42px;
+    letter-spacing: 3px;
+    font-weight: 100;
+  }
+  
+  h2 {
+    font-size: 26px;
+    line-height: 34px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    display: block;
+    margin: 0;
+    cursor: pointer;
+  }
+
+
+  .accordion-content {
+    color: rgba(48, 69, 92, 0.8);
+    font-size: 17px;
+    line-height: 26px;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    max-height: 800px;
+    opacity: 1;
+    transform: translate(0, 0);
+    margin-top: 14px;
+    z-index: 2;
+    .content {
+        display: grid;
+        .content-desc {
+            text-align: center;
+            font-family: 'Dosis', sans-serif;
+            font-style: italic;
+            color: white;
+        }
+        .content-order{
+            > a {
+              width: 100%;
+            }
+           
+        }
+    }
+  }
+  
+  ul {
+    list-style: none;
+    perspective: 900;
+    padding: 0;
+    margin: 0;
+  }
+  ul li {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 18px;
+    padding-top: 18px;
+    border-top: 1px dotted #dce7eb;
+    //border: 1px dotted #dce7eb;
+  }
+  ul li:nth-of-type(1) {
+    animation-delay: 0.5s;
+  }
+  ul li:nth-of-type(2) {
+    animation-delay: 0.75s;
+  }
+  ul li:nth-of-type(3) {
+    animation-delay: 1s;
+  }
+  ul li.menu-item:last-of-type {
+    border-bottom: 1px dotted #dce7eb;
+  }
+  ul li i {
+    position: absolute;
+    transform: translate(-40px, 0);
+    margin-top: 16px;
+    right: 0;
+  }
+  ul li i:before, ul li i:after {
+    content: "";
+    position: absolute;
+    background-color: #F06292;
+    width: 3px;
+    height: 9px;
+  }
+  ul li i:before {
+    transform: translate(-2px, 0) rotate(45deg);
+  }
+  ul li i:after {
+    transform: translate(2px, 0) rotate(-45deg);
+  }
+
+  ul li input[type=checkbox] {
+    position: absolute;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+  }
+
+  ul li input[type=checkbox]:checked ~ .accordion-content {
+    margin-top: 0;
+    max-height: 0;
+    opacity: 0;
+    transform: translate(0, 50%);
+  }
+  ul li input[type=checkbox]:checked ~ i:before {
+    transform: translate(2px, 0) rotate(45deg);
+  }
+  ul li input[type=checkbox]:checked ~ i:after {
+    transform: translate(-2px, 0) rotate(-45deg);
+  }
+  
+  @keyframes flipdown {
+    0% {
+      opacity: 0;
+      transform-origin: top center;
+      transform: rotateX(-90deg);
+    }
+    5% {
+      opacity: 1;
+    }
+    80% {
+      transform: rotateX(8deg);
+    }
+    83% {
+      transform: rotateX(6deg);
+    }
+    92% {
+      transform: rotateX(-3deg);
+    }
+    100% {
+      transform-origin: top center;
+      transform: rotateX(0deg);
+    }
+  }
+
+
+  html{
+    background-image: url('http://cakie.de/onewebmedia/12771821_429625677248251_7456166847252003761_o.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  #wrapper{
+   width: 80%;
+    margin: 0 auto;  
+  }
+  
+  .fancygrow{
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 30px;
+    width: 100%;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#002c44+0,0083c9+100 */
+  background: #002c44; /* Old browsers */
+  background: -moz-linear-gradient(45deg, #002c44 0%, #0083c9 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #002c44 0%,#0083c9 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #002c44 0%,#0083c9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002c44', endColorstr='#0083c9',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    display: block;
+    text-align: center;
+    max-width: 400px;
+    height: 50px;
+    line-height: 50px;
+    margin: 25px auto;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px 20px 20px 20px;
+  -moz-border-radius: 20px 20px 20px 20px;
+  -webkit-border-radius: 20px 20px 20px 20px;
+  border: 0px solid #000000;
+     -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+  }
+  
+  .fancygrow:hover{
+  -webkit-box-shadow: 0px 14px 23px -10px rgba(0,44,68,0.56);
+  -moz-box-shadow: 0px 14px 23px -10px rgba(0,44,68,0.56);
+  box-shadow: 0px 14px 23px -10px rgba(0,44,68,0.56);
+   
+    transform: scale(1.050, 1.050);
+  -webkit-transform: scale(1.050, 1.050);
+  -moz-transform: scale(1.050, 1.050);
+  -o-transform: scale(1.050, 1.050);
+  -ms-transform: scale(1.050, 1.050);
+  }
+
+    
+  .fancyshrink{
+    font-family: 'Dosis', sans-serif;
+    font-size: 30px;
+    width: 100%;
+  background: rgba(241,231,103,1);
+  background: -moz-linear-gradient(-45deg, rgba(241,231,103,1) 0%, rgba(252,70,216,1) 100%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(241,231,103,1)), color-stop(100%, rgba(252,70,216,1)));
+  background: -webkit-linear-gradient(-45deg, rgba(241,231,103,1) 0%, rgba(252,70,216,1) 100%);
+  background: -o-linear-gradient(-45deg, rgba(241,231,103,1) 0%, rgba(252,70,216,1) 100%);
+  background: -ms-linear-gradient(-45deg, rgba(241,231,103,1) 0%, rgba(252,70,216,1) 100%);
+  background: linear-gradient(135deg, rgba(241,231,103,1) 0%, rgba(252,70,216,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1e767', endColorstr='#fc46d8', GradientType=1 );
+    display: block;
+    text-align: center;
+    max-width: 400px;
+    height: 50px;
+    line-height: 50px;
+    margin: 25px auto;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px 20px 20px 20px;
+  -moz-border-radius: 20px 20px 20px 20px;
+  -webkit-border-radius: 20px 20px 20px 20px;
+  border: 0px solid #000000;
+     -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+  }
+  
+  .fancyshrink:hover{
+  -webkit-box-shadow: 0px 14px 23px -10px rgba(0,44,68,0.56);
+  -moz-box-shadow: 0px 14px 23px -10px rgba(0,44,68,0.56);
+  box-shadow: 0px 14px 23px -10px rgba(0,44,68,0.56);
+   
+    transform: scale(0.950, 0.950);
+  -webkit-transform: scale(0.950, 0.950);
+  -moz-transform: scale(0.950, 0.950);
+  -o-transform: scale(0.950, 0.950);
+  -ms-transform: scale(0.950, 0.950);
+  }
+  
+
+
+
+  @import url('https://fonts.googleapis.com/css?family=Montserrat');
+body {
+	background-color: #111;
+}
+
+.title {
+	font-family: "Montserrat";
+	text-align: center;
+	color: #FFF;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	letter-spacing: 1px;
+}
+
+.header {
+	background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+	background-size: cover;
+	color: transparent;
+	-moz-background-clip: text;
+	-webkit-background-clip: text;
+	text-transform: uppercase;
+	font-size: 120px;
+	line-height: .75;
+	margin: 10px 0;
+}
+/* styling my button */
+
+.white-mode {
+	text-decoration: none;
+	padding: 7px 10px;
+	background-color: #122;
+	border-radius: 3px;
+	color: #FFF;
+	transition: .35s ease-in-out;
+	position: absolute;
+	left: 15px;
+	bottom: 15px;
+	font-family: "Montserrat";
+}
+
+.white-mode:hover {
+	background-color: #FFF;
+	color: #122;
+}
+
+.select-style {
+    text-align: center;
+    display: grid;
+    padding: 1rem;;
+}
+
+
+  .test {
+      height: 100%;
+  }
